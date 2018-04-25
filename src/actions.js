@@ -1,19 +1,19 @@
 import uuid from 'uuid';
 
-export const 
+export const
  	ADD_COMMENT = 'ADD_COMMENT',
 	EDIT_COMMENT = 'EDIT_COMMENT',
 	REMOVE_COMMENT = 'DELETE_COMMENT',
 	THUMB_UP_COMMENT = 'THUMB_UP_COMMENT',
 	THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
-	
-	
+
+
 
 export const addComment = function addComment(text){
 	return {
 	type: ADD_COMMENT,
 	text,
-	id: uuid.v4() 
+	id: uuid.v4()
 	}
 }
 
@@ -32,7 +32,7 @@ export const removeComment = function removeComment(id){
 	}
 }
 
-function thumbUpComment(id) {
+export function thumbUpComment(id) {
 	return {
 		type: THUMB_UP_COMMENT,
 		id
