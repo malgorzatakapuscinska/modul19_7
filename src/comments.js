@@ -30,14 +30,11 @@ import {THUMB_DOWN_COMMENT} from './actions';
 			});
 
 		case THUMB_UP_COMMENT:
-			return state.comments.map(comment => {
+			return state.map(comment => {
 				if(comment.id === action.id){
-					return Object.assign({}, comment, {
-						votes: action.votes + 1
-					});
-				} else{
-					return comment;
-				}
+					return {...comment, votes: comment.votes + 1}}; /* Increases votess and adds at the end of the comment*/
+
+			return comment;
 			});
 
 		case THUMB_DOWN_COMMENT:
