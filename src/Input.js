@@ -12,7 +12,8 @@ export class MessageInput extends React.Component{
     });
   }
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
     this.props.addComment(this.state.message);
     this.setState({
       message: ''
@@ -22,10 +23,10 @@ export class MessageInput extends React.Component{
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor={'message'}>Add comment</label>
         <input
           type={'text'}
           name='message'
+          placeholder='Write your comment here'
           value={this.state.message}
           onChange={this.handleChange}
         />

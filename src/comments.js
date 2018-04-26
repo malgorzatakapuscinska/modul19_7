@@ -19,14 +19,10 @@ import {THUMB_DOWN_COMMENT} from './actions';
 			return state.filter(comment => comment.id !== action.id);
 
 		case EDIT_COMMENT:
-			return state.comments.map(comment => {
+			return state.map(comment => {
 				if(comment.id === action.id){
-					return Object.assign({}, comment, {
-						text: action.text
-					});
-				} else {
-					return comment;
-				}
+					return {...comment, text: action.text}}
+			return comment;
 			});
 
 		case THUMB_UP_COMMENT:

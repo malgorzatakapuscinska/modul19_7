@@ -17,7 +17,7 @@ export const addComment = function addComment(text){
 	}
 }
 
-export const editComment = function editComment(text, id){
+export const editComment = function editComment(id, text){
 	return {
 		type: EDIT_COMMENT,
 		text,
