@@ -5,12 +5,10 @@ import App from './App';
 import {reducer} from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 import {Provider} from 'react-redux';
-import {createStore, applyMiddleware} from 'redux';
-import {createLogger} from 'redux-logger';
+import {createStore} from 'redux';
 import {addComment} from './actions';
-import {DevTools} from  './DevTools'
-const logger = createLogger();
-const store = createStore(reducer, applyMiddleware(logger), DevTools.instrument());
+import DevTools from  './DevTools'
+const store = createStore(reducer, DevTools.instrument());
 
 ReactDOM.render(
     <Provider store={store}>

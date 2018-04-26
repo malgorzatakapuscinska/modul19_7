@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CommentsListContainer from './CommentsListContainer';
 
 import MessageInputContainer from './MessageInputContainer';
