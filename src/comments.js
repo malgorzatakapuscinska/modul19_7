@@ -16,7 +16,7 @@ import {THUMB_DOWN_COMMENT} from './actions';
 					}, ...state];
 
 		case REMOVE_COMMENT:
-			return state.comments.filter(comment => comment.id !== action.id);
+			return state.filter(comment => comment.id !== action.id);
 
 		case EDIT_COMMENT:
 			return state.comments.map(comment => {
@@ -38,15 +38,11 @@ import {THUMB_DOWN_COMMENT} from './actions';
 			});
 
 		case THUMB_DOWN_COMMENT:
-			return state.comments.map(comment => {
+			return state.map(comment => {
 				if(comment.id === action.id) {
-					return Object.assign({}, comment, {
-						votes: action.votes - 1
-					});
+					return {...comment, votes: comment.votes -1}};
 
-				} else{
-					return comment;
-				}
+			return comment;
 			});
 
 		default:
